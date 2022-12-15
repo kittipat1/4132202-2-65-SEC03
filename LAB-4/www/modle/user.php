@@ -11,18 +11,20 @@ include "condb.php";
     </thead>
     <body>
         <?php
-        $sql = "SELECT * FROM db_user ORDER BY user_id ASC";
+        $sql = "SELECT * FROM tb_user ORDER BY user_id ASC";
         $result = mysqli_query($link,$sql);
         while ($row = mysqli_fetch_assoc($result)){
         ?>
         <tr>
-            <th><?=$row"user_id"?></th>
-            <th><?=$row"user_name"?></th>
-            <th><?=$row"user_pass"?></th>
-            <th><button data=""><?=$row"user_id"?>EDIT</button></th>
-            <th><button data=""><?=$row"user_id"?>DEL</button></th>
+            <th><?=$row['user_id']?></th>
+            <th><?=$row['user_name']?></th>
+            <th><?=$row['user_pass']?></th>
+            <th><button data="<?=$row['user_id']?>">EDIT</button></th>
+            <th><button data="<?=$row['user_id']?>">DEL</button></th>
         </tr>
     <?php
         }
     ?>
+    </body>
+</table>
 
